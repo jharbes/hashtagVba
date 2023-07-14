@@ -9,3 +9,8 @@ Inserir Botão para Rodar Macro
 
 Aba Inserir/Insert -> Shapes/Formas -> Escolher Forma
 Clicar com segundo botão na forma criada e ir em 'assign macro'
+
+
+--------------------------------------------------------------------------------------------------------
+
+
