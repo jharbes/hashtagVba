@@ -7,7 +7,10 @@ Aba Developer/Desenvolvedor -> Gravar Macro/Record Macro
 
 Inserir Botão para Rodar Macro
 
-Aba Inserir/Insert -> Shapes/Formas -> Escolher Forma
+Aba Inserir/Insert -> Shapes/Formas -> Escolher Forma (ao criar a forma pode segurar o alt para que ele fique delimitado dentro de uma linha/coluna), podemos escrever dentro do botão para torná-lo mais intuitivo, podendo alinhar ao centro de maneira vertical e horizontal
+Podemos usar a aba Shape Format/Forma de Formato para formatar as formas do botão (cores, sombreado, etc)
+
+
 Clicar com segundo botão na forma criada e ir em 'assign macro'
 
 
