@@ -16,4 +16,10 @@ Clicar com segundo botão na forma criada e ir em 'assign macro'
 
 --------------------------------------------------------------------------------------------------------
 
+Salvando planilha habilitada para Macro
+
+Ao salvar a planilha ir em Salvar Como/Save As -> Browse -> Salvar com extensao .xlsm
+
+
+--------------------------------------------------------------------------------------------------------
 
