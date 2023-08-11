@@ -16,7 +16,7 @@ End If
 
 
 
-'If com ElseIf e Else
+'If com ElseIf e Else, podem ser usados quantos "ElseIf" forem necessarios
 
 If Range("A2").Value >= 7 Then
 
@@ -34,3 +34,41 @@ Else
 	Range("B2").Value = "Reprovado"
 
 End If
+
+
+
+'If com o condicional And
+
+
+Sub calcula_bonus3()
+
+If Cells(3, 3).Value >= 50000 And Cells(3, 4).Value >= 0.75 Then
+
+    Cells(3, 5).Value = 0.15 * Cells(3, 3).Value
+
+Else
+
+    Cells(3, 5).Value = 0
+    
+End If
+
+End Sub
+
+
+
+'If com o condicional Or
+
+
+Sub calcula_bonus4()
+
+If Cells(3, 3).Value >= 80000 Or Cells(3, 4).Value >= 8 Then
+
+    Cells(3, 5).Value = 0.15 * Cells(3, 3).Value
+
+Else
+
+    Cells(3, 5).Value = 0
+    
+End If
+
+End Sub
