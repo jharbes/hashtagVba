@@ -5,6 +5,12 @@ Sheets("Produtos").Activate
 
 'Limpa as células da tabela resultado
 Range("E6:O11").ClearContents
+Range("D5").Select
+Selection.Copy
+Range("E6:O11").Select
+Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, _
+    SkipBlanks:=False, Transpose:=False
+Application.CutCopyMode = False
 
 Dim grife As String
 Dim status As String
