@@ -12,6 +12,7 @@ Range("E6:O11").Select
 Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, _
     SkipBlanks:=False, Transpose:=False
 Application.CutCopyMode = False
+Range("D5").Select
 
 
 Dim grife As String
