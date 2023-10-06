@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "Módulo1"
 Sub percorre_celulas()
 
 'observe que a declaracao da variavel "celula" é opcional
@@ -25,7 +25,7 @@ Dim aba As Worksheet
 'de Excel abertos no computador e nao apenas no presente arquivo
 'para que sejam utilizadas APENAS AS ABAS DO PRESENTE ARQUIVO
 'devemos alterar a informação para "ThisWorkbook.Sheets"
-For Each aba In Sheets
+For Each aba In ThisWorkbook.Sheets
     
     aba.Activate
     Cells(2, 1).Value = "Alon"
@@ -33,3 +33,23 @@ For Each aba In Sheets
 Next
 
 End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
