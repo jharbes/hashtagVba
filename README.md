@@ -1,3 +1,5 @@
+<img src="vba.svg" align="right" width="100">
+
 # hashtagVba
 
 <h3>Curso de VBA, Hashtag Treinamentos</h3>
