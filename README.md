@@ -1,4 +1,4 @@
-<img src="vba.svg" align="right" width="100">
+<img src="vba.svg" align="right" width="150">
 
 # hashtagVba
 
