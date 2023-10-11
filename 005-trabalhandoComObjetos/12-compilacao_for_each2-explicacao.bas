@@ -15,8 +15,9 @@ Selection.ClearContents
 Range("A2").Select
 
 
+'Copia e cola os funcionários de todas as abas para a aba
+'"Resumo Funcionarios"
 ultima_linha = 2
-
 For Each aba In ThisWorkbook.Sheets
 
     If aba.Name <> Sheets("Resumo Funcionarios").Name Then
@@ -36,6 +37,7 @@ For Each aba In ThisWorkbook.Sheets
         
 Next
 
+'Volta o Excel para a aba inicial
 Sheets("Resumo Funcionarios").Activate
 Range("A2").Select
 
