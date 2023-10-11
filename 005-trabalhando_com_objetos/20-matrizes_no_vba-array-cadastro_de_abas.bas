@@ -26,6 +26,7 @@ For contador = 1 To 5
     'As duas linhas abaixo sao diferentes, pois a que possui a instrucao
     'Before vai criar as abas ANTES da aba atual e a instrucao que possui o
     'After vai criar as abas DEPOIS da aba atual
+	'IMPORTANTE: Se Before e After forem omitidos, a nova planilha será inserida antes da planilha ativa.
     
     'Set nova_aba = ThisWorkbook.Worksheets.Add(Before:=ActiveWorkbook.Worksheets(ActiveWorkbook.Worksheets.Count))
     Set nova_aba = ThisWorkbook.Worksheets.Add(After:=ActiveWorkbook.Worksheets(ActiveWorkbook.Worksheets.Count))
