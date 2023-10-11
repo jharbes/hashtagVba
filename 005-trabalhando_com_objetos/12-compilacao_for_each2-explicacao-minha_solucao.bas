@@ -33,7 +33,7 @@ For Each aba In ThisWorkbook.Sheets
         Range("A" & ultima_linha).Select
         ActiveSheet.Paste
         
-        ultima_linha = Range("A2").End(xlDown).Row
+        ultima_linha = Range("A2").End(xlDown).Row + 1
         
     End If
         

@@ -21,6 +21,8 @@ ultima_linha = 2
 For Each aba In ThisWorkbook.Sheets
 
     If aba.Name <> Sheets("Resumo Funcionarios").Name Then
+    'ou
+    'If aba.Name <> "Resumo Funcionarios" Then
         
         aba.Activate
         Range("A2").Select
@@ -31,7 +33,7 @@ For Each aba In ThisWorkbook.Sheets
         Range("A" & ultima_linha).Select
         ActiveSheet.Paste
         
-        ultima_linha = Range("A2").End(xlDown).Row
+        ultima_linha = Range("A2").End(xlDown).Row + 1
         
     End If
         
