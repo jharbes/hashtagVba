@@ -4,11 +4,15 @@ Sub padronizando_todos_graficos()
 Dim aba As Worksheet
 Dim grafico As ChartObject
 
+'ActiveSheet = aba atual de utilizacao
+
 For Each aba In ThisWorkbook.Sheets
 
     aba.Activate
     
     For Each grafico In aba.ChartObjects
+    'ou
+    'For Each grafico In ActiveSheet.CharObjects
     
     ActiveSheet.ChartObjects(grafico.Name).Activate
     With ActiveSheet.Shapes(grafico.Name).Fill
