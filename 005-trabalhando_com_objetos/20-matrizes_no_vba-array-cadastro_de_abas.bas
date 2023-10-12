@@ -3,6 +3,8 @@ Sub cria_abas()
 
 
 'declarando um array ou vetor no VBA (de Strings)
+'No VBA o indice inicial é opcional, nesse caso estamos colocando como 1,
+'mas caso nada fosse declarado o indice inicial seria 0 (zero)
 Dim array_estados(1 To 5) As String
 
 'declarando as outras variaveis utilizadas (opcional)
