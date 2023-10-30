@@ -55,7 +55,7 @@ For linha_atual = linha_inicio To linha_fim
     Range("D17").Value = pn
     Range("D19").Value = descricao
     
-    Sheets("folha_de_rosto_modelo").ExportAsFixedFormat Type:=xlTypePDF, Filename:=diretorio_salvar & ordem & ".pdf"
+    Sheets("folha_de_rosto_modelo").ExportAsFixedFormat Type:=xlTypePDF, Filename:=diretorio_salvar & "folha_de_rosto_ordem_" & ordem & ".pdf"
     
     Sheets("planilha_ordens").Activate
 
