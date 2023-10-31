@@ -17,21 +17,29 @@ Dim tr As String
 Dim data_necessidade As String
 Dim data_atual As String
 
+'Cria a data atual no formato dd/mm/yyyy para ser utilizada como
+'data de abertura de ordem
 data_atual = Format(Date, "dd/mm/yyyy")
 
 
 Sheets("planilha_ordens").Activate
 
-linha_inicio = 2
-linha_fim = Range("A1").End(xlDown).Row
+'Salva o nome do planejador
 planejador = Range("I13").Value
+
+'Salva o caminho do diretorio para salvar as folhas de rosto
 diretorio_salvar = Range("I16").Value
 
 
-Sheets("planilha_ordens").Activate
+linha_inicio = 2
 
+'Encontra qual é a ultima linha preenchida da tabela "planilha_ordens"
+linha_fim = Range("A1").End(xlDown).Row
+
+'Percorre as linhas preenchidas da tabela "planilha_ordens"
 For linha_atual = linha_inicio To linha_fim
-
+    
+    'Salva todos os dados de cada linha por vez da tabela "planilha_ordens"
     pn = Cells(linha_atual, 1).Value
     descricao = Cells(linha_atual, 2).Value
     wbs = Cells(linha_atual, 3).Value
@@ -43,8 +51,10 @@ For linha_atual = linha_inicio To linha_fim
     tr = Cells(linha_atual, 6).Value
     data_necessidade = Cells(linha_atual, 7).Value
     
+    'Altera a planilha ativa para a "folha_de_rosto_modelo"
     Sheets("folha_de_rosto_modelo").Activate
     
+    'Preenche a folha de rosto
     Range("C1").Value = planejador
     Range("H1").Value = data_atual
     Range("L1").Value = data_necessidade
@@ -55,12 +65,28 @@ For linha_atual = linha_inicio To linha_fim
     Range("D17").Value = pn
     Range("D19").Value = descricao
     
+    'Imprime/Salva em formato PDF a folha de rosto no diretorio indicado
     Sheets("folha_de_rosto_modelo").ExportAsFixedFormat Type:=xlTypePDF, Filename:=diretorio_salvar & "folha_de_rosto_ordem_" & ordem & ".pdf"
     
+    'Retorna a planilha ativa para "planilha_ordens" para continuar o processo até a ultima linha preenchida
     Sheets("planilha_ordens").Activate
 
 Next
 
+
+
+End Sub
+
+
+Sub limpa_registros()
+
+
+'Apaga todos os registros da aba "planilha_ordens"
+Sheets("planilha_ordens").Activate
+Range("A2:G2").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Clear
+Range("A2").Select
 
 
 End Sub
