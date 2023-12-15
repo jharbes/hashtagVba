@@ -22,6 +22,8 @@ For linha = 2 To numero_concessionarias + 1
 
 Next
 
+
+
 Sheets("Resumo").Activate
 
 ultima_linha = Range("A1").End(xlDown).Row
@@ -30,12 +32,28 @@ resposta = MsgBox("Deseja rodar a macro?", vbQuestion + vbYesNo, "EXECUTAR MACRO
 
 
 If resposta = 6 Then
+    
 
     novos_usados = InputBox("Deseja compilar os carros Novos ou Usados?", "CONFIRMAÇÃO", "Novos/Usados")
     
     If novos_usados = "Novos" Or novos_usados = "Usados" Then
     
-        
+        'Apaga todos os registros das abas de concessionarias
+        For linha = 1 To numero_concessionarias
+    
+            Sheets(array_concessionarias(linha) & " - Novos").Activate
+            Range("A2:F2").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.Clear
+            Range("A2").Select
+            
+            Sheets(array_concessionarias(linha) & " - Usados").Activate
+            Range("A2:F2").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.Clear
+            Range("A2").Select
+    
+        Next
             
         Sheets("Resumo").Activate
         For linha = 2 To ultima_linha
