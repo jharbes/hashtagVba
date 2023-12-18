@@ -1,7 +1,10 @@
 Attribute VB_Name = "Module1"
+
 Sub compilar_extracoes()
 
 resposta = MsgBox("Deseja rodar a macro?", vbOKCancel, "EXECUTA MACRO")
+
+Sheets("Base").Activate
 
 If resposta = 1 Then
     
@@ -77,10 +80,45 @@ If resposta = 1 Then
     End If
     
     
+    Dim linha As Integer
+    Dim linha2 As Integer
     
+    For linha = LBound(array_mes) To UBound(array_mes)
+        
+        Range("A1").Select
+        Selection.AutoFilter
+        ActiveSheet.Range("$A$1:$D$" & Range("A1").End(xlDown).Row).AutoFilter Field:=1, Criteria1:=array_mes(linha)
+        
+        For linha2 = LBound(array_plataforma) To UBound(array_plataforma)
+        
+            ActiveSheet.Range("$A$1:$D$" & Range("A1").End(xlDown).Row).AutoFilter Field:=3, Criteria1:=array_plataforma(linha2)
+            Range("D2").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.Copy
+            Sheets(array_mes(linha)).Activate
+            
+            For coluna = 1 To Range("A1").End(xlToRight).Column
+                
+                If Cells(1, coluna).Value = array_plataforma(linha2) Then
+                
+                    Cells(2, coluna).Select
+                    ActiveSheet.Paste
+                            
+                End If
+                
+            Next
+            
+            Sheets("Base").Activate
+            
+        Next
+        
+    Next
     
- 
     Sheets("Base").Activate
+    ActiveSheet.ShowAllData
+    Selection.AutoFilter
+    
+    MsgBox "Macro executada com sucesso!", vbInformation, "SUCESSO!"
 
 Else
 
@@ -91,3 +129,4 @@ End If
 
 
 End Sub
+
