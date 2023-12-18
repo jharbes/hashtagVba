@@ -9,3 +9,13 @@ resposta = MsgBox("deseja realmente executar a macro?", vbYesNo + vbQuestion, "C
 
 resposta = MsgBox("deseja realmente executar a macro?", _
  vbYesNo + vbQuestion, "CONFIRMAÇÃO")
+
+
+
+'utilizando goto em vba
+'ao cair na linha do GoTo ele automaticamente sera redirecionado para a linha de codigo onde está
+'o nome do GoTo (alon:)
+alon:
+	tipo = inputbox("Teste")
+	
+GoTo alon
