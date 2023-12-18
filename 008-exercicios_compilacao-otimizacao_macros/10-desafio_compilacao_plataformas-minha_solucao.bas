@@ -130,3 +130,21 @@ End If
 
 End Sub
 
+
+
+Sub limpar_registros()
+
+    For Each aba In ThisWorkbook.Sheets
+    
+        If aba.Index > 1 Then
+        
+            aba.Activate
+            Range("B2:H" & Range("A1").End(xlDown).Row).ClearContents
+        
+        End If
+    
+    Next
+    
+    Sheets("Base").Activate
+
+End Sub
