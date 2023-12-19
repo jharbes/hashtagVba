@@ -139,7 +139,7 @@ Sub limpar_registros()
         If aba.Index > 1 Then
         
             aba.Activate
-            Range("B2:H" & Range("A1").End(xlDown).Row).ClearContents
+            Range("B2:H1048576").ClearContents
         
         End If
     
