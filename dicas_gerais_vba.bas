@@ -19,3 +19,13 @@ alon:
 	tipo = inputbox("Teste")
 	
 GoTo alon
+
+
+
+'aumentar a velocidade da macro desligando a visualizacao da macro rodando
+
+Application.ScreenUpdating = False
+
+'Todo o codigo da macro aqui
+
+Application.ScreenUpdating = True
