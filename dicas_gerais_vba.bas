@@ -53,4 +53,30 @@ Application.Calculation = xlCalculationAutomatic
 
 
 'podemos combinar essa e a anterior para agilizarmos a macro
+
+
+'--------------------------------------------------------------------------------------------
+
+'tratamento de erros "resume next"
+
+'indica que caso haja alguem erro basta seguir em frente rodando
+'o restante da macro (coloca no inicio da macro)
+On Error Resume Next
+
+
+
+'tratamento de erros "goto label"
+
+sub servicos()
+
+on Error GoTo Tratar
+
+Exit Sub
+
+Tratar:
+Msgbox("Funcionário sem serviço especificado, favor tratar!")
+
+End Sub
+
+
 '--------------------------------------------------------------------------------------------
