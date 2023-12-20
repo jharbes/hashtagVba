@@ -1,5 +1,10 @@
+'manipular elementos da planilha sem precisar alterar a planilha ativa
 Worksheets("NomeDaPlanilha").Cells(linha, coluna).NumberFormat = "General"
 Worksheets("NomeDaPlanilha").Cells(linha, coluna).Value = SeuNumero
+
+'ou
+
+Sheets("Planilha2").Cells(1, 2).Value = "Alon"
 
 
 

@@ -1,7 +1,12 @@
 Attribute VB_Name = "Module1"
 Sub compila()
 
+'aumentar a velocidade da macro desligando a visualizacao da macro rodando
+'importante desligar apos fim do codigo
 Application.ScreenUpdating = False
+
+'aumentar a velocidade da macro desligando o calculo automatico na tabela do excel
+'importante desligar apos fim do codigo
 Application.Calculation = xlCalculationManual
 
 
