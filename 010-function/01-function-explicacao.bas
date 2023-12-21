@@ -11,3 +11,14 @@ Function nome_da_funcao(arg1 as Tipo, arg2 as Tipo, arg3 as Tipo,...) as Tipo
 	nome_da_funcao = valor que vai ser retornado como resposta
 
 End Function
+
+
+'Exemplo:
+
+Function minhasoma (num1 as Tipo, num2 as Tipo, num3, as Tipo,...) as Tipo
+
+	'comandos
+	
+	minha_soma = num1 + num2 + num3
+	
+End Function
