@@ -1,3 +1,15 @@
+'Application = Excel em si
+
+'Workbooks = Cada arquivo do excel
+
+'Sheets = Cada aba do excel
+
+'Range/Cells = Cada célula ou conjunto de células de uma aba
+
+
+
+'--------------------------------------------------------------------------------------------
+
 'manipular elementos da planilha sem precisar alterar a planilha ativa
 Worksheets("NomeDaPlanilha").Cells(linha, coluna).NumberFormat = "General"
 Worksheets("NomeDaPlanilha").Cells(linha, coluna).Value = SeuNumero
@@ -80,3 +92,18 @@ End Sub
 
 
 '--------------------------------------------------------------------------------------------
+
+'encerra todas as instancias do excel
+Application.Quit 
+
+'Retira as instancias de excel do full screen (tela cheia, sem os botoes e menus, nao é retirar de maximizar)
+Application.DisplayFullScreen = False
+
+
+'--------------------------------------------------------------------------------------------
+
+'Abre o arquivo em questão
+Workbooks.Open
+
+'Salva o arquivo em questao
+Workbooks.Save
