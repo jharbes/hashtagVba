@@ -102,6 +102,9 @@ Application.DisplayFullScreen = False
 
 '--------------------------------------------------------------------------------------------
 
+'salvando a path do arquivo atual
+caminho_do_arquivo = ThisWorkbook.Path
+	
 'Abre o arquivo em questão
 Workbooks.Open(path)
 
