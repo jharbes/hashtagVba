@@ -103,7 +103,19 @@ Application.DisplayFullScreen = False
 '--------------------------------------------------------------------------------------------
 
 'Abre o arquivo em questão
-Workbooks.Open
+Workbooks.Open(path)
 
+Set wb = Workbooks.Open(path) 'seta a variavel wb como sendo o workbook aberto
 'Salva o arquivo em questao
-Workbooks.Save
+'salva o arquivo das areas
+wb.Save
+    
+'CUIDADO!!
+ThisWorkbook.Save 'arquivo onde está escrita a macro
+ActiveWorkbook.Save 'arquivo sendo utilizado no momento
+
+'Fechar o arquivo
+wb.Close
+
+ThisWorkbook.Close 'arquivo onde está escrita a macro
+ActiveWorkbook.Close 'arquivo sendo utilizado no momento
