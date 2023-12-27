@@ -99,3 +99,20 @@ Application.ScreenUpdating = True
 Application.Calculation = xlCalculationAutomatic
 
 End Sub
+
+
+Function IsInArray(valToBeFound As Variant, arr As Variant) As Boolean
+
+    Dim element As Variant
+    
+    On Error Resume Next ' Em caso de erro (por exemplo, se arr não for um array), a próxima linha causará erro
+    
+    For Each element In arr
+        If element = valToBeFound Then
+            IsInArray = True
+            Exit Function
+        End If
+    Next element
+    
+    IsInArray = False ' Se o valor não for encontrado
+End Function
