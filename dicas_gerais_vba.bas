@@ -6,6 +6,16 @@
 
 'Range/Cells = Cada célula ou conjunto de células de uma aba
 
+'--------------------------------------------------------------------------------------------
+
+'como fazer uma pausa no codigo
+
+'Esperar 1 Segundo
+Application.Wait (Now + TimeValue("0:00:01"))
+
+'Esperar Até (Um Horário Específico)
+Application.Wait "09:00:00"
+
 
 
 '--------------------------------------------------------------------------------------------
