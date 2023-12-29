@@ -54,13 +54,15 @@ For Each arquivo In pasta.Files
 
 Next arquivo
 
+ultima_linha = Range("A1").End(xlDown).Row
+
 Range("D1").Select
     ActiveWorkbook.Worksheets("Compilado").Sort.SortFields.Clear
     ActiveWorkbook.Worksheets("Compilado").Sort.SortFields.Add2 Key:=Range( _
-        "D2:D2404"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        "D2:D" & ultima_linha), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
         xlSortNormal
     With ActiveWorkbook.Worksheets("Compilado").Sort
-        .SetRange Range("A1:D2404")
+        .SetRange Range("A1:D" & ultima_linha)
         .Header = xlYes
         .MatchCase = False
         .Orientation = xlTopToBottom
