@@ -132,3 +132,10 @@ wb.Close
 
 ThisWorkbook.Close 'arquivo onde está escrita a macro
 ActiveWorkbook.Close 'arquivo sendo utilizado no momento
+
+
+'--------------------------------------------------------------------------------------------
+
+'imprimir no console (utilizado para fazer debug)
+
+Debug.Print valor_necessario
