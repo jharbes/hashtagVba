@@ -1,5 +1,11 @@
 Sub loop_scrooldown_sap()
 
+'Identificando última linha da tabela do SAP
+LastRow = session.findById("wnd[0]/usr/tblSAPML02BD0103").RowCount
+
+'Contando quantas páginas tem na tabela
+Division = Round(LastRow / 14)
+
 'Loop pegando cada item da tabela do SAP, fazendo scroll down de página em página e alimentando a tabela do excel
 For count = 0 To Division - 1
   For j = 0 To 13
